@@ -1,0 +1,142 @@
+<!-- <template>
+    <div >
+        
+       
+            <template if:true={open}>
+                <section role="dialog"  tabindex="-1" aria-modal="true" aria-label="Meaningful description of the modal content" 
+                class="slds-modal slds-fade-in-open sectioncss">
+                    <div class="slds-modal__container">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeMAmodal}>
+                            <lightning-icon icon-name="utility:close"
+                                alternative-text="close"
+                                variant="inverse"
+                                size="small" ></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                    <div class="slds-modal__content slds-p-around_medium slds-modal__content_headless model" id="modal-content-id-1">
+
+                        <template for:each={UserData} for:index="index" for:item="item">
+                            <div key={item.Id}>
+                                
+                                <div class="slds-grid slds-wrap">
+                                    <div class="slds-col slds-size_3-of-4 slds-wrap slds-grid">
+                                        <span class="circle slds-size_1-of-3" ><b>{item.Alpha}</b></span>
+                                        <div class="slds-size_2-of-3 NameDiv">
+                                            <p>{item.Name}</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="slds-col slds-size_1-of-4 " >
+                                        <label class="container" >
+                                            <input type="checkbox" value={item.Id} onchange={checkedValue} class="checkboxinput"/> 
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+
+                                </div><br>
+                            </div>
+                    </template>
+
+                    </div> -->
+                    <!-- <div class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" aria-label="Cancel and close">Cancel</button>
+                    <button class="slds-button slds-button_brand">Save</button>
+                    </div> -->
+                    <!-- </div>
+                    </section> -->
+                    <!-- <div class="slds-backdrop slds-backdrop_open" role="presentation"></div> -->
+            <!-- </template> -->
+            <!-- <div class="childDiv">
+            <template if:true={open}>
+                <div class="child">
+                    
+                        <template for:each={UserData} for:index="index" for:item="item">
+                            <div key={item.Id}>
+                                
+                                <div class="slds-grid slds-wrap">
+                                    <div class="slds-col slds-size_3-of-4 slds-wrap slds-grid">
+                                        <span class="circle slds-size_1-of-3" ><b>{item.Alpha}</b></span>
+                                        <div class="slds-size_2-of-3 NameDiv">
+                                            <p>{item.Name}</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="slds-col slds-size_1-of-4 " >
+                                        <label class="container" >
+                                            <input type="checkbox" value={item.Id} onchange={checkedValue} class="checkboxinput"/> 
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+
+                                </div><br>
+                            </div>
+                        </template>
+                
+                </div>
+            </template>
+        </div> -->
+        
+        <!-- <div class="parent">
+            <lightning-button variant="brand" label="UI3" title="Primary action" onclick={handleClick} 
+            class="slds-m-left_x-small btn" ></lightning-button>
+        </div>
+    </div>
+    
+</template> -->
+
+
+<template>
+    <div class="mainDiv">
+        
+       <!-- <div class="showDiv"> -->
+            <template if:true={open}>
+                <section role="dialog" data-id="modalPopup"  tabindex="-1" aria-modal="true" aria-label="Meaningful description of the modal content" 
+                class="slds-modal slds-fade-in-open sectioncss">
+                
+                    <div class="slds-modal__container">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeMAmodal}>
+                            <lightning-icon icon-name="utility:close"
+                                alternative-text="close"
+                                variant="inverse"
+                                size="small" style=" background-color:  blue;"></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <div class="slds-modal__content slds-p-around_medium slds-modal__content_headless model" id="modal-content-id-1">
+
+                            <template for:each={UserData} for:index="index" for:item="item">
+                                <div key={item.Id}>
+                                    
+                                    <div class="slds-grid slds-wrap">
+                                        <div class="slds-col slds-size_3-of-4 slds-wrap slds-grid">
+                                            <span class="circle slds-size_1-of-3" ><b>{item.Alpha}</b></span>
+                                            <div class="slds-size_2-of-3 NameDiv">
+                                                <p>{item.Name}</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="slds-col slds-size_1-of-4 " >
+                                            <label class="container" >
+                                                <input type="checkbox" value={item.Id} onchange={checkedValue} class="checkboxinput"/> 
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+
+                                    </div><br>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </section>
+                    
+            </template>
+        <!-- </div> -->
+        
+        <!-- <div class="buttonDiv"> -->
+            <lightning-button variant="brand" label="UI3" title="Primary action" onclick={handleClick} 
+            class="slds-m-left_x-small btn" ></lightning-button>
+        <!-- </div> -->
+    </div>
+
+
+    
+</template>

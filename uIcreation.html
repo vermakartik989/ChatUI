@@ -1,0 +1,110 @@
+<template>
+    <div>
+        <lightning-button variant="brand" label="UI1" title="Primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+    </div>
+    <template if:true={open}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeMAmodal}>
+                        <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="inverse"
+                            size="small" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-0" class="slds-text-heading_medium slds-hyphenate">Create Group</h2>
+                </header>
+                <!-- Modal/Popup Box LWC body starts here -->
+                <div class="slds-modal__content slds-p-around_medium fieldss" id="modal-content-id">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size_1-of-3 Gname">
+                            <label ><b> Group name:-</b></label> 
+                        </div>
+                        
+                        <div class="slds-col slds-size_2-of-3 " >
+                            <lightning-input type="text" placeholder="Enter Group name..."></lightning-input>
+                        </div>
+                    </div><br><br>
+                    
+                    <template for:each={UserData} for:index="index" for:item="item">
+                        <div key={item.Id}>
+                            
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-col slds-size_3-of-4 slds-wrap slds-grid">
+                                    <span class="circle slds-size_1-of-3" ><b>{item.Alpha}</b></span>
+                                    <div class="slds-size_2-of-3 NameDiv">
+                                         <p>{item.Name}</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="slds-col slds-size_1-of-4 " >
+                                    <label class="container" >
+                                        <input type="checkbox" value={item.Id} onchange={checkedValue} class="checkboxinput"/> 
+                                        <span class="checkmark"></span>
+                                      </label>
+
+                                    <!-- <lightning-input variant="Brand" onchange={handleChange} 
+                                    name={item.Name} 
+                                    type="checkbox" 
+                                    value={item.Id} class="slds-p-left_xxxxx-large checkbox"></lightning-input>  -->
+                                </div>
+                            </div><br>
+                        </div>
+                   </template>
+
+                    <!-- <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label" for="horizontal-input-id-01">Group Name:-</label>
+                        <div class="slds-form-element__control">
+                            <lightning-input  type="text" placeholder="Enter the Group Name..."></lightning-input> 
+                        
+                        </div>
+                    </div>
+                    <template for:each={numberOfFileds} for:index="index" for:item="item">
+                        <div key={item.id}>
+                            
+                            <div class="slds-grid slds-wrap {item.id}">
+                                <div class="slds-col slds-size_1-of-2">
+                                    <div class="slds-p-around_medium lgc-bg" style="display:flex;">
+                                        <span style="padding: 25px 6px 0px 5px;">{item.id}.</span> 
+                                        <lightning-input type="text" style="width:280px;height:55px;float:left;" placeholder="Name..." index={item.id} ></lightning-input>
+                                   </div>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                        <div class="slds-p-around_medium lgc-bg">
+                                        <lightning-input type="number" style="width:280px;height:55px;float:left;" placeholder="Phone Number..." index={item.id} max-length="10"></lightning-input>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                   </template>
+                   <a class="special"></a> -->
+                   <!-- <div>
+                    <lightning-button variant="brand" label="+" title="Non-primary action"   onclick={addRecord} 
+                    class="slds-m-left_xxx-small" style="float:right;">
+                    </lightning-button> -->
+                    <!-- <lightning-icon icon-name="utility:add" size="small" style="float:right;"></lightning-icon> -->
+                   <!-- </div> -->
+                   <!-- <div>
+                    <lightning-button variant="destructive" label="-" title="Non-primary action"  onclick={subtractRecord} 
+                    class="slds-m-left_xxx-small" style="float:right;">
+                    </lightning-button>
+                   </div> -->
+                   
+                    
+                </div>
+                <!-- Modal/Popup Box LWC footer starts here -->
+                <footer class="slds-modal__footer">
+                    <!-- <button class="slds-button slds-button_neutral" onclick={closeMAmodal} title="Cancel">Cancel</button> -->
+                    <lightning-button variant="brand-outline" label="cancel" title="Primary action with lighter look" 
+                    onclick={closeMAmodal} class="slds-m-left_x-small"></lightning-button>
+                    <lightning-button variant="brand" label="Save" title="Primary action" onclick={TransferOwner} 
+                    class="slds-m-left_x-small"></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>
